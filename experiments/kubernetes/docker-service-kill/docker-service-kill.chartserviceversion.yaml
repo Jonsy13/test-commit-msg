@@ -1,0 +1,37 @@
+apiVersion: litmuchaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  name: docker-service-kill
+  version: 0.1.0
+  annotations:
+    categories: Kubernetes
+    vendor: Harness
+spec:
+  displayName: docker-service-kill
+  categoryDescription: |
+    docker-service-kill contains killing docker service gracefully for a certain chaos duration.
+    - Causes replicas may be evicted or becomes unreachable on account on nodes turning unschedulable (Not Ready) due to docker service kill.
+    - The application node should be healthy once chaos is stopped and the services are reaccessable. 
+  keywords:
+    - Kubernetes 
+  platforms:
+    - GKE    
+    - AKS
+  scenarios:
+    - k8s-docker-service-kill
+  maintainers:
+    - name: ksatchit
+      email: karthik.s@harness.io
+  minKubeVersion: 1.12.0
+  provider:
+    name: Harness
+  labels:
+    app.kubernetes.io/component: chartserviceversion
+    app.kubernetes.io/version: 2.13.0
+  links:
+    - name: Documentation
+      url: https://docs.harness.io/category/kl0mxwpfw1-hce-category
+  icon:
+    - base64data: ""
+      mediatype: ""
+  chaosexpcrdlink: https://raw.githubusercontent.com/wings-software/enterprise-chaos-hub/main/experiments/kubernetes/docker-service-kill/experiment.yaml
