@@ -1,0 +1,27 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: test-experiment-2
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: test-experiment-2
+  displayName: test-experiment-2
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: pod-cpu-hog-fiq
+  keywords:
+  - test-experiment-2
+  provider:
+    name: ""
+  scenarios: null
