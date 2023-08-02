@@ -4174,7 +4174,6 @@ data:
     DEPLOYMENTS: ["app=chaos-exporter", "name=chaos-operator", "app=workflow-controller"]
   CONNECTION_TYPE: https
   IS_SECRET_ENABLED: "true"
-  
 ---
 apiVersion: v1
 kind: Secret
