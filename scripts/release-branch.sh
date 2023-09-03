@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export RELEASE_BRANCH="1.21.x"
+export RELEASE_BRANCH="1.22.x"
 
 git commit --allow-empty -m "Set version branch release/${RELEASE_BRANCH}"
 git push origin main
