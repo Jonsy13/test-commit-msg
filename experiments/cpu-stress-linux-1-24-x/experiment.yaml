@@ -1,0 +1,49 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: cpu-stress-linux-1-24-x
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-k71
+  - - name: linux-cpu-stress-a6t
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        probes:
+        - mode: Edge
+          name: sdsdsdsd
+          runProperties:
+            attempt: 0
+          type: ""
+        stressChaos/inputs:
+          duration: 30
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-k71
+    taskType: chaos
+    weight: 10
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        probes:
+        - mode: SOT
+          name: cmd-linux-1-23-x
+          runProperties:
+            attempt: 0
+          type: ""
+        stressChaos/inputs:
+          duration: 30
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-a6t
+    taskType: chaos
+    weight: 10
+status:
+  finishedAt: null
+  startedAt: null

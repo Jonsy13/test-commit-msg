@@ -1,0 +1,41 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: cpu-stress-linux-1-24-x
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: cpu-stress-linux-1-24-x
+  displayName: cpu-stress-linux-1-24-x
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress-k71
+    plan: null
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress-a6t
+    plan: null
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress-k71
+    plan: null
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress-a6t
+    plan: null
+  keywords:
+  - linux
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
