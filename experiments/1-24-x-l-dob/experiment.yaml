@@ -1,0 +1,59 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: 1-24-x-l-dob
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-yrw
+  - - name: linux-memory-stress-fcc
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        probes:
+        - mode: Edge
+          name: cmd-linux-1-23-x
+          runProperties:
+            attempt: 0
+          type: ""
+        - mode: SOT
+          name: sdsdsdsd
+          runProperties:
+            attempt: 0
+          type: ""
+        stressChaos/inputs:
+          duration: 30
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-yrw
+    taskType: chaos
+    weight: 10
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-memory-stress
+        probes:
+        - mode: EOT
+          name: cmd-linux-1-23-x
+          runProperties:
+            attempt: 0
+          type: ""
+        - mode: SOT
+          name: sdsdsdsd
+          runProperties:
+            attempt: 0
+          type: ""
+        stressChaos/inputs:
+          duration: 30
+          memory: 50%
+          workers: 1
+    name: linux-memory-stress-fcc
+    taskType: chaos
+    weight: 10
+status:
+  finishedAt: null
+  startedAt: null

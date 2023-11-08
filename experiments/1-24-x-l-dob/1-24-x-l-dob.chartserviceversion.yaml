@@ -1,0 +1,32 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: 1-24-x-l-dob
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: ""
+  displayName: 1-24-x-l-dob
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress-yrw
+    plan: null
+  - description: ""
+    displayName: ""
+    name: linux-memory-stress-fcc
+    plan: null
+  keywords: []
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
