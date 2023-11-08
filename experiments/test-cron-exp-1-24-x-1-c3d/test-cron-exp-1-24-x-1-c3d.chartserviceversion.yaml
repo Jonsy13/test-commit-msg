@@ -1,0 +1,29 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: test-cron-exp-1-24-x-1-c3d
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: test-cron-exp-1-24-x-1
+  displayName: test-cron-exp-1-24-x-1-c3d
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: pod-delete-ylt
+    plan: null
+  keywords:
+  - test-cron-exp-1-24-x-1
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
