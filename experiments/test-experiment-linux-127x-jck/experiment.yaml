@@ -1,0 +1,54 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: test-experiment-linux-127x-jck
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-bom
+  - - name: linux-network-latency-4uq
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        probes:
+        - mode: SOT
+          name: linux-http-probe
+          runProperties:
+            attempt: 0
+          type: ""
+        - mode: SOT
+          name: 1-25-x-linux-cmd
+          runProperties:
+            attempt: 0
+          type: ""
+        stressChaos/inputs:
+          duration: 30s
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-bom
+    taskType: chaos
+    weight: 5
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-network-latency
+        networkChaos/inputs:
+          duration: 30s
+          networkInterfaces: ens4
+          networkLatency: 2000
+        probes:
+        - mode: EOT
+          name: 1-24-x-http-post-linux
+          runProperties:
+            attempt: 0
+          type: ""
+    name: linux-network-latency-4uq
+    taskType: chaos
+    weight: 10
+status:
+  finishedAt: null
+  startedAt: null
