@@ -1,0 +1,28 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: experiment-1704525775287
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: ""
+  displayName: experiment-1704525775287
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: pod-delete-v54
+    plan: null
+  keywords: []
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
