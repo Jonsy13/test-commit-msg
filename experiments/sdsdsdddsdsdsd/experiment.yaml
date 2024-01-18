@@ -1,0 +1,54 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: sdsdsdddsdsdsd
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-y27
+  - - name: linux-cpu-stress-75y
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        probes:
+        - mode: SOT
+          name: 1-27-x-linux-http-post
+          runProperties:
+            attempt: 0
+          type: ""
+        - mode: SOT
+          name: 1-22-cmd-probe-linux
+          runProperties:
+            attempt: 0
+          type: ""
+        stressChaos/inputs:
+          duration: 30s
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-y27
+    taskType: chaos
+    weight: 10
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        probes:
+        - mode: SOT
+          name: 1-21-http-llinux
+          runProperties:
+            attempt: 0
+          type: ""
+        stressChaos/inputs:
+          duration: 30s
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-75y
+    taskType: chaos
+    weight: 6
+status:
+  finishedAt: null
+  startedAt: null
