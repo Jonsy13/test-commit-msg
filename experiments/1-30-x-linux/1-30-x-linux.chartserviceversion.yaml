@@ -1,0 +1,30 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: 1-30-x-linux
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: 1-30-x-linux
+  displayName: 1-30-x-linux
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: linux-memory-stress-0so
+    plan: null
+    supportedVersion: null
+  keywords:
+  - 1-30-x-linux
+  plan: null
+  provider:
+    name: ""
+  scenarios: null

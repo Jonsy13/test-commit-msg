@@ -1,0 +1,36 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: 1-30-x-linux
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-memory-stress-0so
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-memory-stress
+        probes:
+        - mode: SOT
+          name: 1-29-x-linux-http-get
+          runProperties:
+            attempt: 0
+          type: ""
+        - mode: SOT
+          name: 1-29-x-linux-http-post
+          runProperties:
+            attempt: 0
+          type: ""
+        stressChaos/inputs:
+          duration: 30s
+          memory: 50%
+          workers: 1
+    name: linux-memory-stress-0so
+    taskType: chaos
+    weight: 10
+status:
+  finishedAt: null
+  startedAt: null
