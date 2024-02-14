@@ -1,0 +1,59 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: linux-multiple-blank
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-l6i
+  - - name: linux-network-loss-ubo
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        probes:
+        - mode: SOT
+          name: 1-29-x-linux-cmd
+          runProperties:
+            attempt: 0
+          type: ""
+        - mode: EOT
+          name: 1-30-x-linux-http
+          runProperties:
+            attempt: 0
+          type: ""
+        stressChaos/inputs:
+          duration: 30s
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-l6i
+    taskType: chaos
+    weight: 10
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-network-loss
+        networkChaos/inputs:
+          duration: 30s
+          networkInterfaces: ens4
+          packetLossPercentage: 100
+        probes:
+        - mode: SOT
+          name: 1-29-x-linux-http-post
+          runProperties:
+            attempt: 0
+          type: ""
+        - mode: EOT
+          name: 1-29-x-linux-http-get
+          runProperties:
+            attempt: 0
+          type: ""
+    name: linux-network-loss-ubo
+    taskType: chaos
+    weight: 10
+status:
+  finishedAt: null
+  startedAt: null
