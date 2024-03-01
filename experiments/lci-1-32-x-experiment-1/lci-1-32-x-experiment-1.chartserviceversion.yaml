@@ -1,0 +1,35 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: lci-1-32-x-experiment-1
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: lci-1-32-x-experiment-1
+  displayName: lci-1-32-x-experiment-1
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  keywords:
+  - lci-1-32-x-experiment-1
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
