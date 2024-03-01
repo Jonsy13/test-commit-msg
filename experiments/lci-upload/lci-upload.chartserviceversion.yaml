@@ -1,0 +1,35 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: lci-upload
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: lci-upload
+  displayName: lci-upload
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  keywords:
+  - lci-upload
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
