@@ -1,0 +1,49 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: MachineChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: test-wci-experiment
+spec:
+  infraType: windows
+  steps:
+  - - name: windows-cpu-stress-jju
+      status: ""
+  - - name: windows-memory-stress-pnx
+      status: ""
+  tasks:
+  - definition:
+      chaos:
+        env:
+        - name: CPU_CORES
+          value: "1"
+        - name: CPU_PERCENTAGE
+          value: "50"
+        - name: DURATION
+          value: 30s
+        - name: RAMP_TIME
+        fault: windows-cpu-stress
+    infraId: ""
+    name: windows-cpu-stress-jju
+    probeRef:
+    - mode: SOT
+      name: 1-32-x-win-http-get
+    - mode: EOT
+      name: 1-32-x-win-http-post
+  - definition:
+      chaos:
+        env:
+        - name: MEMORY_CONSUMPTION
+          value: "20"
+        - name: MEMORY_PERCENTAGE
+          value: "50"
+        - name: DURATION
+          value: 30s
+        - name: RAMP_TIME
+        fault: windows-memory-stress
+    infraId: ""
+    name: windows-memory-stress-pnx
+    probeRef:
+    - mode: Edge
+      name: 1-32-x-win-http-get
+    - mode: OnChaos
+      name: 1-32-x-win-http-post
