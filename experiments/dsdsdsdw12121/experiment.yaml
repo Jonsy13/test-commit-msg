@@ -1,0 +1,31 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: dsdsdsdw12121
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-l9f
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        probes:
+        - mode: SOT
+          name: 1-32-x-linux-http-get
+          runProperties:
+            attempt: 0
+          type: ""
+        stressChaos/inputs:
+          duration: 31s
+          load: 10
+          workers: 1
+    name: linux-cpu-stress-l9f
+    taskType: chaos
+    weight: 10
+status:
+  finishedAt: null
+  startedAt: null
