@@ -1,0 +1,30 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: 1-32-x-rprobes
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: 1-32-x-rprobes
+  displayName: 1-32-x-rprobes
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: pod-delete-dvn
+    plan: null
+    supportedVersion: null
+  keywords:
+  - 1-32-x-rprobes
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
