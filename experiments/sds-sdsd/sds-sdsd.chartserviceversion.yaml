@@ -1,0 +1,40 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: sds-sdsd
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: https://qa.harness.io/ng/account/DSzI0EehTMqGVdfsfG3a5g/module/chaos/orgs/default/projects/ChaosDev1/experiments/20d751ea-6af9-4535-951a-19acb086a733/notifyID/4974e6ad-b7fa-4ad8-9497-0baa94519da0/report
+  displayName: sds-sdsd
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: linux-memory-stress
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  keywords:
+  - https://qa.harness.io/ng/account/DSzI0EehTMqGVdfsfG3a5g/module/chaos/orgs/default/projects/ChaosDev1/experiments/20d751ea-6af9-4535-951a-19acb086a733/notifyID/4974e6ad-b7fa-4ad8-9497-0baa94519da0/report
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
