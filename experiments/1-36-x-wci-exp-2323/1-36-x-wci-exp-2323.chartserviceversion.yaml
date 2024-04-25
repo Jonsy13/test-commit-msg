@@ -1,0 +1,41 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: 1-36-x-wci-exp-2323
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: 1-36-x-wci-exp-2323
+  displayName: 1-36-x-wci-exp-2323
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: windows-cpu-stress
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: windows-cpu-stress
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: windows-memory-stress
+    plan: null
+    supportedVersion: null
+  keywords:
+  - 1-36-x-wci-exp
+  - sdsd
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
