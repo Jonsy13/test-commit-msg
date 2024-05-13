@@ -1,0 +1,40 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: win-exp-1-37-x
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: dfdf
+  displayName: win-exp-1-37-x
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: windows-cpu-stress
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: windows-memory-stress
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: windows-cpu-stress
+    plan: null
+    supportedVersion: null
+  keywords:
+  - dfsdsd
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
