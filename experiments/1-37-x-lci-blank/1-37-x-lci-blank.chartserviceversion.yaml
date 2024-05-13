@@ -1,0 +1,40 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: 1-37-x-lci-blank
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: wewewe
+  displayName: 1-37-x-lci-blank
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: linux-memory-stress
+    plan: null
+    supportedVersion: null
+  keywords:
+  - wewe
+  plan: null
+  provider:
+    name: ""
+  scenarios: null

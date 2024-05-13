@@ -1,0 +1,58 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: 1-37-x-lci-blank
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-bqr
+  - - name: linux-cpu-stress-llq
+  - - name: linux-memory-stress-ga0
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        stressChaos/inputs:
+          duration: 30s
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-bqr
+    probeRef:
+    - mode: SOT
+      name: 1-36-x-linux-dyna
+    taskType: chaos
+    weight: 5
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        stressChaos/inputs:
+          duration: 30s
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-llq
+    probeRef:
+    - mode: SOT
+      name: 1-36-x-linux-http
+    taskType: chaos
+    weight: 5
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-memory-stress
+        stressChaos/inputs:
+          duration: 30s
+          memory: 50%
+          workers: 1
+    name: linux-memory-stress-ga0
+    probeRef:
+    - mode: EOT
+      name: 1-36-x-linux-http
+    taskType: chaos
+    weight: 5
+status:
+  finishedAt: null
+  startedAt: null
