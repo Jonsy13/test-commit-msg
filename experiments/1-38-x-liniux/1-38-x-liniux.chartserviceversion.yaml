@@ -1,0 +1,40 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: 1-38-x-liniux
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: sdsds
+  displayName: 1-38-x-liniux
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: linux-memory-stress
+    plan: null
+    supportedVersion: null
+  keywords:
+  - sdsdsd
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
