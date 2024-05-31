@@ -1,0 +1,40 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: experiment-1-38-x
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: sdsdsds
+  displayName: experiment-1-38-x
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: pod-delete-twi
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: pod-cpu-hog-dt6
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: pod-network-latency-c90
+    plan: null
+    supportedVersion: null
+  keywords:
+  - sdssd
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
