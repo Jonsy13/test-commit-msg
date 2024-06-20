@@ -1,0 +1,26 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: MachineChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: dsdsdsdsdsdsdsdsd-1
+spec:
+  infraType: windows
+  steps:
+  - - name: windows-memory-stress-4ap
+  tasks:
+  - definition:
+      chaos:
+        env:
+        - name: MEMORY_CONSUMPTION
+        - name: MEMORY_PERCENTAGE
+          value: "52"
+        - name: DURATION
+          value: 30s
+        - name: RAMP_TIME
+        fault: windows-memory-stress
+    infraId: ""
+    name: windows-memory-stress-4ap
+    probeRef:
+    - mode: SOT
+      probeID: 1-34-x-windows-http-post
+    taskDefName: ""
