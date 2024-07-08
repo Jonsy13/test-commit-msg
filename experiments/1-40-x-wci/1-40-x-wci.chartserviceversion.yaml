@@ -1,0 +1,35 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: 1-40-x-wci
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: 1-40-x-wci
+  displayName: 1-40-x-wci
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: windows-cpu-stress
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: windows-cpu-stress
+    plan: null
+    supportedVersion: null
+  keywords:
+  - 1-40-x-wci
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
