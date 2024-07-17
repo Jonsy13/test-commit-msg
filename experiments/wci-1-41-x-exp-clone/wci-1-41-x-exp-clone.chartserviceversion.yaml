@@ -1,0 +1,36 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: wci-1-41-x-exp-clone
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: wci-1-41-x-exp-clone
+  displayName: wci-1-41-x-exp-clone
+  experiments: null
+  faults:
+  - description: ""
+    displayName: ""
+    name: windows-cpu-stress
+    plan: null
+    supportedVersion: null
+  - description: ""
+    displayName: ""
+    name: windows-cpu-stress
+    plan: null
+    supportedVersion: null
+  keywords:
+  - wci-1-41-x-exp
+  - wci-1-41-x-exp-clone
+  plan: null
+  provider:
+    name: ""
+  scenarios: null

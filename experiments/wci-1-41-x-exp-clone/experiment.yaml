@@ -1,0 +1,46 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: MachineChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: wci-1-41-x-exp-clone
+spec:
+  infraType: windows
+  steps:
+  - - name: windows-cpu-stress-aty
+  - - name: windows-cpu-stress-nai
+  tasks:
+  - definition:
+      chaos:
+        env:
+        - name: CPU_CORES
+          value: "2"
+        - name: CPU_PERCENTAGE
+          value: "50"
+        - name: DURATION
+          value: 30s
+        - name: RAMP_TIME
+        fault: windows-cpu-stress
+    infraId: ""
+    name: windows-cpu-stress-aty
+    probeRef:
+    - mode: SOT
+      probeID: 1-36-x-windows-http-get
+    - mode: EOT
+      probeID: 1-34-x-windows-http-post
+    taskDefName: ""
+  - definition:
+      chaos:
+        env:
+        - name: CPU_CORES
+        - name: CPU_PERCENTAGE
+          value: "50"
+        - name: DURATION
+          value: 30s
+        - name: RAMP_TIME
+        fault: windows-cpu-stress
+    infraId: ""
+    name: windows-cpu-stress-nai
+    probeRef:
+    - mode: EOT
+      probeID: 1-36-x-windows-http-get
+    taskDefName: ""
