@@ -1,0 +1,43 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: test-43-x-bc
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-ovn
+  - - name: linux-network-latency-5se
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        stressChaos/inputs:
+          duration: 30s
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-ovn
+    probeRef:
+    - mode: EOT
+      probeID: 1-36-x-linux-http
+    taskType: chaos
+    weight: 10
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-network-latency
+        networkChaos/inputs:
+          duration: 30s
+          networkLatency: 2000
+          whitelistSSH: true
+    name: linux-network-latency-5se
+    probeRef:
+    - mode: SOT
+      probeID: 1-36-x-linux-cmd
+    taskType: chaos
+    weight: 6
+status:
+  finishedAt: null
+  startedAt: null

@@ -1,0 +1,37 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: test-43-x-bc
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: test-43-x-bc
+  displayName: test-43-x-bc
+  experiments: null
+  faults:
+  - chaosType: ""
+    description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  - chaosType: ""
+    description: ""
+    displayName: ""
+    name: linux-network-latency
+    plan: null
+    supportedVersion: null
+  keywords:
+  - test-43-x-bc
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
