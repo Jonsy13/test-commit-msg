@@ -1,0 +1,27 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: MachineChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: 1-43-x-windows
+spec:
+  infraType: windows
+  steps:
+  - - name: windows-cpu-stress-p2s
+  tasks:
+  - definition:
+      chaos:
+        env:
+        - name: CPU_CORES
+          value: "2"
+        - name: CPU_PERCENTAGE
+          value: "50"
+        - name: DURATION
+          value: 30s
+        - name: RAMP_TIME
+        fault: windows-cpu-stress
+    infraId: ""
+    name: windows-cpu-stress-p2s
+    probeRef:
+    - mode: SOT
+      probeID: 1-36-x-windows-http-get
+    taskDefName: ""

@@ -1,0 +1,31 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: 1-43-x-windows
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: 1-43-x-windows
+  displayName: 1-43-x-windows
+  experiments: null
+  faults:
+  - chaosType: ""
+    description: ""
+    displayName: ""
+    name: windows-cpu-stress
+    plan: null
+    supportedVersion: null
+  keywords:
+  - 1-43-x-windows
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
