@@ -1,0 +1,45 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: 1-44-x-blank-canvas-linux
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-927
+  - - name: linux-memory-stress-q25
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        stressChaos/inputs:
+          duration: 30s
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-927
+    probeRef:
+    - mode: SOT
+      probeID: 1-36-x-linux-http
+    - mode: EOT
+      probeID: 1-36-x-linux-cmd
+    taskType: chaos
+    weight: 7
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-memory-stress
+        stressChaos/inputs:
+          duration: 30s
+          memory: 100%
+          workers: 5
+    name: linux-memory-stress-q25
+    probeRef:
+    - mode: SOT
+      probeID: 1-34-x-linux-http-get
+    taskType: chaos
+    weight: 9
+status:
+  finishedAt: null
+  startedAt: null

@@ -1,0 +1,37 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: 1-44-x-blank-canvas-linux
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: 1-44-x-blank-canvas-linux
+  displayName: 1-44-x-blank-canvas-linux
+  experiments: null
+  faults:
+  - chaosType: ""
+    description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  - chaosType: ""
+    description: ""
+    displayName: ""
+    name: linux-memory-stress
+    plan: null
+    supportedVersion: null
+  keywords:
+  - 1-44-x-blank-canvas-linux
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
