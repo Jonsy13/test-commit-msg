@@ -1,0 +1,44 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: MachineChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: test-bc-48-windows
+spec:
+  infraType: Windows
+  steps:
+  - - name: windows-cpu-stress-jk0
+  - - name: windows-memory-stress-v90
+  tasks:
+  - definition:
+      chaos:
+        env:
+        - name: CPU_CORES
+          value: "1"
+        - name: CPU_PERCENTAGE
+          value: "50"
+        - name: DURATION
+          value: 30s
+        - name: RAMP_TIME
+        fault: windows-cpu-stress
+    infraId: ""
+    name: windows-cpu-stress-jk0
+    probeRef:
+    - mode: SOT
+      probeID: windows-http-probe-46-x
+    taskDefName: ""
+  - definition:
+      chaos:
+        env:
+        - name: MEMORY_CONSUMPTION
+        - name: MEMORY_PERCENTAGE
+          value: "20"
+        - name: DURATION
+          value: 30s
+        - name: RAMP_TIME
+        fault: windows-memory-stress
+    infraId: ""
+    name: windows-memory-stress-v90
+    probeRef:
+    - mode: EOT
+      probeID: 1-36-x-windows-http-get
+    taskDefName: ""
