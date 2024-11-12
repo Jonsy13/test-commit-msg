@@ -1,0 +1,131 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  creationTimestamp: null
+  name: experiment-1731388008943
+  namespace: cypress-namespace-sombat
+spec:
+  arguments:
+    parameters:
+    - name: adminModeNamespace
+      value: cypress-namespace-sombat
+  entrypoint: experiment-1731388008943
+  podGC:
+    strategy: OnWorkflowCompletion
+  securityContext:
+    runAsGroup: 0
+    runAsNonRoot: true
+    runAsUser: 1000
+  serviceAccountName: argo-chaos
+  templates:
+  - inputs: {}
+    metadata: {}
+    name: experiment-1731388008943
+    outputs: {}
+    steps:
+    - - arguments: {}
+        name: pod-delete-z18
+        template: pod-delete-z18
+    - - arguments: {}
+        name: cleanup-chaos-resources
+        template: cleanup-chaos-resources
+  - container:
+      args:
+      - kubectl delete chaosengine -l workflow_run_id={{workflow.uid}} -n {{workflow.parameters.adminModeNamespace}}
+      command:
+      - sh
+      - -c
+      image: docker.io/harness/chaos-go-runner:1.49.0
+      name: ""
+      resources: {}
+    inputs: {}
+    metadata: {}
+    name: cleanup-chaos-resources
+    outputs: {}
+  - container:
+      args:
+      - -file=/tmp/chaosengine-pod-delete-z18.yaml
+      - -saveName=/tmp/engine-name
+      command:
+      - ./chaos-checker
+      image: docker.io/harness/chaos-go-runner:1.49.0
+      name: ""
+      resources: {}
+    inputs:
+      artifacts:
+      - name: pod-delete-z18
+        path: /tmp/chaosengine-pod-delete-z18.yaml
+        raw:
+          data: |
+            apiVersion: litmuschaos.io/v1alpha1
+            kind: ChaosEngine
+            metadata:
+              namespace: "{{workflow.parameters.adminModeNamespace}}"
+              labels:
+                name: pod-delete
+                app.kubernetes.io/part-of: litmus
+                app.kubernetes.io/component: experiment-job
+                app.kubernetes.io/version: ci
+                workflow_run_id: "{{ workflow.uid }}"
+                workflow_name: experiment-1731388008943
+              annotations:
+                probeRef: '[{"probeID":"test-k8s-probe","mode":"SOT"}]'
+              generateName: pod-delete-z18
+            spec:
+              appinfo:
+                appns: cypress-namespace-sombat
+                applabel: app=chaos-exporter
+                appkind: deployment
+              engineState: active
+              terminationGracePeriodSeconds: 30
+              chaosServiceAccount: litmus-admin
+              experiments:
+                - name: pod-delete
+                  image: docker.io/harness/chaos-go-runner:1.49.0
+                  imagePullPolicy: Always
+                  args:
+                    - -c
+                    - ./experiments -name pod-delete
+                  command:
+                    - /bin/bash
+                  spec:
+                    components:
+                      env:
+                        - name: TOTAL_CHAOS_DURATION
+                          value: "30"
+                        - name: RAMP_TIME
+                          value: ""
+                        - name: FORCE
+                          value: "false"
+                        - name: CHAOS_INTERVAL
+                          value: "10"
+                        - name: PODS_AFFECTED_PERC
+                          value: ""
+                        - name: TARGET_CONTAINER
+                          value: ""
+                        - name: TARGET_PODS
+                          value: ""
+                        - name: DEFAULT_HEALTH_CHECK
+                          value: "false"
+                        - name: NODE_LABEL
+                          value: ""
+                        - name: SEQUENCE
+                          value: parallel
+                      securityContext:
+                        podSecurityContext:
+                          runAsUser: 2000
+                          runAsGroup: 0
+              components:
+                runner: {}
+                sidecar:
+                  - image: docker.io/harness/chaos-log-watcher:1.49.0
+                    imagePullPolicy: Always
+              jobCleanUpPolicy: delete
+    metadata:
+      labels:
+        weight: "10"
+    name: pod-delete-z18
+    outputs: {}
+status:
+  finishedAt: null
+  startedAt: null
