@@ -1,0 +1,45 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: test-linux-50-diff
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-26k
+  - - name: linux-memory-stress-dvz
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        stressChaos/inputs:
+          duration: 30s
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-26k
+    probeRef:
+    - mode: SOT
+      probeID: 1-34-x-linux-http-get
+    taskType: chaos
+    weight: 10
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-memory-stress
+        stressChaos/inputs:
+          duration: 30s
+          memory: 50%
+          workers: 1
+    name: linux-memory-stress-dvz
+    probeRef:
+    - mode: SOT
+      probeID: 1-36-x-linux-cmd
+    - mode: SOT
+      probeID: 1-36-x-linux-http
+    taskType: chaos
+    weight: 10
+status:
+  finishedAt: null
+  startedAt: null

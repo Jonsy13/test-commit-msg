@@ -1,0 +1,37 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: test-linux-50-diff
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: wd
+  displayName: test-linux-50-diff
+  experiments: null
+  faults:
+  - chaosType: ""
+    description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  - chaosType: ""
+    description: ""
+    displayName: ""
+    name: linux-memory-stress
+    plan: null
+    supportedVersion: null
+  keywords:
+  - sdsd
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
