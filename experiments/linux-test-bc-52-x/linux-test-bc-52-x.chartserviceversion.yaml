@@ -1,0 +1,43 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: linux-test-bc-52-x
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: linux-test-bc-52-x
+  displayName: linux-test-bc-52-x
+  experiments: null
+  faults:
+  - chaosType: ""
+    description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  - chaosType: ""
+    description: ""
+    displayName: ""
+    name: linux-memory-stress
+    plan: null
+    supportedVersion: null
+  - chaosType: ""
+    description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  keywords:
+  - linux-test-bc-52-x
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
