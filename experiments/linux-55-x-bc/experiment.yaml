@@ -1,0 +1,58 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: linux-55-x-bc
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-4dx
+  - - name: linux-memory-stress-ipp
+  - - name: linux-network-duplication-tdw
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        stressChaos/inputs:
+          duration: 30s
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-4dx
+    probeRef:
+    - mode: SOT
+      probeID: x-cmd-linux
+    taskType: chaos
+    weight: 7
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-memory-stress
+        stressChaos/inputs:
+          duration: 30s
+          memory: 50%
+          workers: 1
+    name: linux-memory-stress-ipp
+    probeRef:
+    - mode: EOT
+      probeID: x-http
+    taskType: chaos
+    weight: 5
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-network-duplication
+        networkChaos/inputs:
+          duration: 30s
+          packetDuplicationPercentage: 100
+          whitelistSSH: true
+    name: linux-network-duplication-tdw
+    probeRef:
+    - mode: EOT
+      probeID: x-cmd-linux
+    taskType: chaos
+    weight: 7
+status:
+  finishedAt: null
+  startedAt: null
