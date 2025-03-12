@@ -1,0 +1,45 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: linux-57-x-bc
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-kp4
+  - - name: linux-memory-stress-75e
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        stressChaos/inputs:
+          duration: 10s
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-kp4
+    probeRef:
+    - mode: EOT
+      probeID: x-cmd-linux
+    - mode: SOT
+      probeID: x-http
+    taskType: chaos
+    weight: 8
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-memory-stress
+        stressChaos/inputs:
+          duration: 10s
+          memory: 50%
+          workers: 1
+    name: linux-memory-stress-75e
+    probeRef:
+    - mode: SOT
+      probeID: x-http
+    taskType: chaos
+    weight: 7
+status:
+  finishedAt: null
+  startedAt: null
