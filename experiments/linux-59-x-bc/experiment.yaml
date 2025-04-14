@@ -1,0 +1,28 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: linux-59-x-bc
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-zc2
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        stressChaos/inputs:
+          duration: 10s
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-zc2
+    probeRef:
+    - mode: SOT
+      probeID: x-cmd-linux
+    taskType: chaos
+    weight: 7
+status:
+  finishedAt: null
+  startedAt: null
