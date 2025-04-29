@@ -1,0 +1,7 @@
+probes:
+- description: new-apm-probe
+  infraType: Kubernetes
+  name: new-apm-probe
+  tags:
+  - new-apm-probe
+  type: apmProbe

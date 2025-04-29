@@ -1,0 +1,21 @@
+apmProbe/inputs:
+  comparator:
+    criteria: oneOf
+    type: float
+    value: "11"
+  prometheusInputs:
+    authSecretName: ddcr-probe-auth-chaossrmprom-project
+    endpoint: http://35.225.254.18:9090/
+    query: test
+    tlsConfig:
+      insecureSkipVerify: true
+      secretName: ddcr-probe-tls-account.testfiletestsecrethg
+  type: Prometheus
+mode: Continuous
+name: new-apm-probe
+runProperties:
+  initialDelay: 5s
+  interval: 2s
+  probePollingInterval: 30s
+  probeTimeout: 10s
+type: apmProbe

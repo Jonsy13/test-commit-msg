@@ -1,0 +1,27 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: new-apm-probe
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: new-apm-probe
+  displayName: new-apm-probe
+  experiments: null
+  faults: null
+  identity: ""
+  infras: null
+  keywords:
+  - new-apm-probe
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
