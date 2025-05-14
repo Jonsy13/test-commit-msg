@@ -1,0 +1,38 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: linux-without-vanity-url
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: ""
+  displayName: linux-without-vanity-url
+  experiments: null
+  faults:
+  - chaosType: ""
+    description: ""
+    displayName: ""
+    name: linux-cpu-stress
+    plan: null
+    supportedVersion: null
+  - chaosType: ""
+    description: ""
+    displayName: ""
+    name: linux-memory-stress
+    plan: null
+    supportedVersion: null
+  identity: ""
+  infras: null
+  keywords: []
+  plan: null
+  provider:
+    name: ""
+  scenarios: null

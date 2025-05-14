@@ -1,0 +1,43 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: LinuxChaosExperiment
+metadata:
+  creationTimestamp: null
+  name: linux-without-vanity-url
+spec:
+  experimentId: ""
+  experimentRunId: ""
+  steps:
+  - - name: linux-cpu-stress-txr
+  - - name: linux-memory-stress-b87
+  tasks:
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-cpu-stress
+        stressChaos/inputs:
+          duration: 10s
+          load: 100
+          workers: 1
+    name: linux-cpu-stress-txr
+    probeRef:
+    - mode: EOT
+      probeID: x-cmd-linux
+    taskType: chaos
+    weight: 10
+  - chaosInfra: ""
+    definition:
+      chaos:
+        experiment: linux-memory-stress
+        stressChaos/inputs:
+          duration: 10s
+          memory: 50%
+          workers: 1
+    name: linux-memory-stress-b87
+    probeRef:
+    - mode: EOT
+      probeID: x-http
+    taskType: chaos
+    weight: 10
+status:
+  finishedAt: null
+  startedAt: null
