@@ -1,0 +1,48 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: KubernetesChaosExperiment
+metadata:
+  name: k8s-apm-probe-execution-tests
+  namespace: neelanjan
+spec:
+  cleanupPolicy: delete
+  experimentId: ""
+  experimentRunId: ""
+  serviceAccountName: litmus
+  steps:
+  - - name: pod-delete-ve2
+      status: ""
+  tasks:
+  - definition:
+      chaos:
+        defaultHealthCheck: false
+        experiment: ""
+        image: ""
+        imagePullPolicy: ""
+      targets: null
+    faultRef:
+      name: pod-delete
+      revision: 1
+    name: pod-delete-ve2
+    probeRef:
+    - mode: SOT
+      probeID: k8s-apm-splunk-failure
+    - mode: SOT
+      probeID: k8s-apm-splunk
+    - mode: SOT
+      probeID: k8s-apm-appd-failure
+    - mode: SOT
+      probeID: k8s-apm-appd
+    - mode: SOT
+      probeID: k8s-apm-prom-invalid
+    - mode: SOT
+      probeID: k8s-apm-prom
+    values:
+    - name: TARGET_WORKLOAD_KIND
+      value: deployment
+    - name: TARGET_WORKLOAD_NAMESPACE
+      value: neelanjan
+    - name: TARGET_WORKLOAD_LABELS
+      value: app=nginx
+    - name: POD_AFFECTED_PERCENTAGE
+      value: "100"
+variables: null

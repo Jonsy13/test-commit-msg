@@ -1,0 +1,39 @@
+apiVersion: litmuschaos.io/v1alpha1
+kind: ChartServiceVersion
+metadata:
+  annotations:
+    categories: ""
+    chartDescription: ""
+    createdAt: ""
+    repository: ""
+    support: ""
+    vendor: ""
+  name: k8s-apm-probe-execution-tests
+packageInfo:
+  experiments: null
+  packageName: ""
+spec:
+  categoryDescription: ""
+  displayName: k8s-apm-probe-execution-tests
+  experiments: null
+  faults:
+  - chaosType: ""
+    description: ""
+    displayName: ""
+    name: pod-delete-ve2
+    plan: null
+    supportedVersion: null
+  identity: ""
+  infras: null
+  keywords:
+  - fault=pod-delete
+  - probe=k8s-apm-splunk-failure
+  - probe=k8s-apm-splunk
+  - probe=k8s-apm-appd-failure
+  - probe=k8s-apm-appd
+  - probe=k8s-apm-prom-invalid
+  - probe=k8s-apm-prom
+  plan: null
+  provider:
+    name: ""
+  scenarios: null
